@@ -55,6 +55,11 @@ h3{
     width:200px;
     border-radius: 50%;
     flex-direction: center;
+    border: 5px dotted rgb(235, 145, 175);
+    box-shadow: inset;
+    padding: 10px;
+    margin-left: -5px;
+    transform: rotate(-3deg);
 }
 
 .intro{
