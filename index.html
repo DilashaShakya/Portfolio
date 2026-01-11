@@ -11,7 +11,10 @@
 <body>
     <section class="top-container">
         <h2> I'm Dilasha</h2>
-        <h3> a <u>software</u> developer</h3>
+        <h3 class="typing"> a <u>software</u> developer.</h3>
+        <audio id="clickSound" src="./sounds/click.wav" preload="auto"></audio>
+        <button class="play-btn" id="myBtn" data-tip="Hi! Scroll to get to know me >ᴗ<"> <img class="img-play" src='./images/play.png' alt="play button" /> </button>
+        
     </section>
     <section class="separator">
         <div class="separator"> 
@@ -62,6 +65,22 @@
         
         
     </section>
-    
+
+
+
+    <script>
+  const btn = document.getElementById("myBtn");
+  const sound = document.getElementById("clickSound");
+
+  btn.addEventListener("click", () => {
+    sound.currentTime = 0;
+    sound.play().catch(() => {});
+
+    window.scrollBy({ top: 200, behavior: "smooth" });
+  });
+</script>
+
+
+</head>   
 </body>
 </html>

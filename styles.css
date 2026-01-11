@@ -161,3 +161,97 @@ a{
     justify-content: center;
     color: pink
 }
+
+.play-btn{
+    margin-top: 25px;
+    border: none; 
+    background-color: transparent;
+
+}
+
+.play-btn:hover{
+    transform: translateY(3px);
+}
+
+.img-play{
+    width:60px;
+    
+}
+
+
+
+.separator > h1{
+    animation: float 3s ease 0s infinite alternate;
+}
+
+@keyframes float {
+    from{
+        transform: translateY(-2px);
+    }
+    to{
+        transform: translateY(2px);
+    }
+    
+}
+
+
+
+.typing{
+  width: 0;                
+  overflow: hidden;        
+  white-space: nowrap;      
+  border-right: 2px solid currentColor;
+  animation: typing 2s steps(19, end) forwards,
+             blink .7s step-end 19s;
+}
+
+@keyframes typing {
+  to { width: 19ch; } /* number of characters */
+}
+
+/* cursor blinking */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.play-btn:active::after{
+  content: "";
+  position:absolute;
+  width: 140px;
+  height: 90px;
+  left: -220px;   
+  top: 350%;
+  gap: 10px;
+  transform: translateY(-50%);
+  background: url("./images/arrow.png") no-repeat center / contain;
+  animation: arrow-move 3s ease 0s infinite alternate;
+}
+
+.play-btn:active::before{
+  content: attr(data-tip);
+  position: absolute;
+
+
+  left: -230px;       
+  top: 340%;
+  transform: translateY(-50%);
+
+  background: rgba(70, 72, 61, 0.75);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 3px solid rgb(0, 0, 0);
+  font-size: 12px;
+  white-space: nowrap;
+  font-style: italic;
+}
+@keyframes arrow-move {
+    from{
+        transform: translate(-5px);
+    }
+    to{
+        transform: translate(5px);
+    }
+    
+}
+
