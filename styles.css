@@ -1,5 +1,9 @@
-.html, body{
-    margin:0;
+/* ============================================
+   GLOBAL STYLES & RESET
+   ============================================ */
+
+.html, body {
+    margin: 0;
     padding: 0;
     font-family: "Libre Baskerville", serif;
     font-optical-sizing: auto;
@@ -7,42 +11,166 @@
     font-style: normal;
 }
 
-
-
-.top-container{
-    background-image: url('images/bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:auto;
-    height: 500px;
-    margin:0;
-    padding:0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; 
-    
+a {
+    color: brown;
+    text-decoration: none;
 }
 
-h2{
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h2 {
     font-family: "Sacramento", cursive;
     font-weight: 600;
     font-style: normal;
     font-size: 80px;
-    margin-top:10%;
+    margin-top: 10%;
     margin-bottom: 0;
     color: rgb(189, 99, 99);
 }
 
-h3{
+h3 {
     font-family: "Garamond";
     font-size: xx-large;
     color: rgb(189, 99, 99);
     margin-bottom: 10px;
 }
 
-.mid-container{
+.h3-wrapper {
+    font-family: "Sacramento", cursive;
+    font-weight: 550;
+    font-style: normal;
+    font-size: 50px;
+}
+
+
+/* ============================================
+   HEADER / TOP CONTAINER
+   ============================================ */
+
+.top-container {
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Typing animation for subtitle */
+.typing {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid currentColor;
+    animation: typing 2s steps(19, end) forwards,
+               blink .7s step-end 19s;
+}
+
+@keyframes typing {
+    to { width: 19ch; } /* number of characters */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+/* ============================================
+   PLAY BUTTON & INTERACTIVE ELEMENTS
+   ============================================ */
+
+.play-btn {
+    margin-top: 25px;
+    border: none;
+    background-color: transparent;
+}
+
+.play-btn:hover {
+    transform: translateY(3px);
+}
+
+.img-play {
+    width: 60px;
+}
+
+/* Tooltip and arrow on button click */
+.play-btn:active::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 90px;
+    left: -220px;
+    top: 350%;
+    gap: 10px;
+    transform: translateY(-50%);
+    background: url("./images/arrow.png") no-repeat center / contain;
+    animation: arrow-move 3s ease 0s infinite alternate;
+}
+
+.play-btn:active::before {
+    content: attr(data-tip);
+    position: absolute;
+    left: -230px;
+    top: 340%;
+    transform: translateY(-50%);
+    background: rgba(70, 72, 61, 0.75);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 12px;
+    white-space: nowrap;
+    font-style: italic;
+}
+
+@keyframes arrow-move {
+    from {
+        transform: translate(-5px);
+    }
+    to {
+        transform: translate(5px);
+    }
+}
+
+
+/* ============================================
+   SEPARATORS
+   ============================================ */
+
+.separator {
+    display: flex;
+    justify-content: center;
+    color: pink;
+}
+
+.separator > h1 {
+    animation: float 3s ease 0s infinite alternate;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(-2px);
+    }
+    to {
+        transform: translateY(2px);
+    }
+}
+
+
+/* ============================================
+   MIDDLE CONTAINER / PROFILE SECTION
+   ============================================ */
+
+.mid-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,9 +183,10 @@ h3{
     position: relative;
 }
 
-.img-wrapper{
+/* Profile Picture */
+.img-wrapper {
     margin-top: 30px;
-    width:200px;
+    width: 200px;
     border-radius: 50%;
     flex-direction: center;
     border: 5px dotted rgb(235, 145, 175);
@@ -69,208 +198,17 @@ h3{
     z-index: 1;
 }
 
-.intro{
-    margin: 0;
-    padding: 20px;
-    line-height: 1.9;
-    max-width: 600px;
-}
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.mid-2-section > h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 50px;
-
-}
-
-.grid-container{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: auto auto;
-    row-gap:40px;
-    column-gap: 40px;
-    padding: 50px;
-    align-items: start; 
-}
-
-.img1, .img2{
-    width: 250px;
-    height: 180px;
-    border-radius: 20px;
-    border: 6px dotted rgb(161, 42, 42);
-
-}
-
-.skill2 h3{
-    margin-top:0;
-    inline-size: 1.8;
-}
-
-.skill1 h3{
-    margin-top:0;
-}
-
-.skill1 p, .skill2 p{
-    margin-top: 30px;
-}
-
-.skill1, .skill2{
-    text-align: left;
-}
-
-.wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-wrapper{
-    display: flex;
-    gap: 100px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    width: auto;
-    height: 100px;
-    color: brown;
-
-}
-.footer{
-    background-color: pink;
-}
-
-.footer > p{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin: 0;
-    font-family: "Sacramento", cursive;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 30px;
-    color: rgb(173, 84, 68);
-
-}
-
-a{
-    color:brown;
-    text-decoration: none;
-}
-
-.separator{
-    display: flex;
-    justify-content: center;
-    color: pink
-}
-
-.play-btn{
-    margin-top: 25px;
-    border: none; 
-    background-color: transparent;
-
-}
-
-.play-btn:hover{
-    transform: translateY(3px);
-}
-
-.img-play{
-    width:60px;
-    
-}
-
-
-
-.separator > h1{
-    animation: float 3s ease 0s infinite alternate;
-}
-
-@keyframes float {
-    from{
-        transform: translateY(-2px);
-    }
-    to{
-        transform: translateY(2px);
-    }
-    
-}
-
-
-
-.typing{
-  width: 0;                
-  overflow: hidden;        
-  white-space: nowrap;      
-  border-right: 2px solid currentColor;
-  animation: typing 2s steps(19, end) forwards,
-             blink .7s step-end 19s;
-}
-
-@keyframes typing {
-  to { width: 19ch; } /* number of characters */
-}
-
-/* cursor blinking */
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-.play-btn:active::after{
-  content: "";
-  position:absolute;
-  width: 140px;
-  height: 90px;
-  left: -220px;   
-  top: 350%;
-  gap: 10px;
-  transform: translateY(-50%);
-  background: url("./images/arrow.png") no-repeat center / contain;
-  animation: arrow-move 3s ease 0s infinite alternate;
-}
-
-.play-btn:active::before{
-  content: attr(data-tip);
-  position: absolute;
-
-
-  left: -230px;       
-  top: 340%;
-  transform: translateY(-50%);
-
-  background: rgba(70, 72, 61, 0.75);
-  color: white;
-  padding: 6px 10px;
-  border-radius: 10px;
-  border: 3px solid rgb(0, 0, 0);
-  font-size: 12px;
-  white-space: nowrap;
-  font-style: italic;
-}
-@keyframes arrow-move {
-    from{
-        transform: translate(-5px);
-    }
-    to{
-        transform: translate(5px);
-    }
-    
-}
+/* ============================================
+ Hello world text
+   ============================================ */
 
 .cloud {
     position: relative;
     background-color: #FFE4E6;
     padding: 15px 50px;
-    margin : 10px auto 20px ;
-    border-radius: 20px;  
+    margin: 10px auto 20px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: block;
     width: fit-content;
@@ -281,7 +219,19 @@ a{
     color: rgb(189, 99, 99);
 }
 
-.intro-wrapper{
+
+/* ============================================
+   INTRO SECTION
+   ============================================ */
+
+.intro {
+    margin: 0;
+    padding: 20px;
+    line-height: 1.9;
+    max-width: 600px;
+}
+
+.intro-wrapper {
     border: 3px solid rgb(235, 145, 175);
     width: fit-content;
     display: inline-block;
@@ -289,146 +239,37 @@ a{
     margin: 20px auto;
 }
 
-.flower{
+
+/* ============================================
+   FLOWER DECORATIONS
+   ============================================ */
+
+.flower {
     position: absolute;
     width: 200px;
     height: auto;
     z-index: 0;
+    animation: float-gentle 3s ease-in-out infinite;
 }
 
-.flower-left{
+.flower-left {
     width: 150px;
     height: auto;
     left: 10%;
     top: 77%;
     transform: translateY(-50%);
+    animation: float-left 4s ease-in-out infinite;
 }
 
-.flower-right{
+.flower-right {
     width: 150px;
     height: auto;
     right: 10%;
     top: 59%;
+    animation: float-right 3.5s ease-in-out infinite;
 }
 
-/* Responsive styles for different screen sizes */
-@media (max-width: 1200px) {
-    .flower{
-        position: absolute;
-        width: 200px;
-        height: auto;
-        z-index: 0;
-    }
-    
-    .flower-left{
-        width: 150px;
-        height: auto;
-        left: -20%;
-        top: 15%;
-        transform: translateY(-50%);
-    }
-    
-    .flower-right{
-        width: 200px;
-        height: auto;
-        right: -20%;
-        top: -10%;
-    }
-}
-
-@media (max-width: 768px) {
-    .flower {
-        width: 100px;
-    }
-    .flower-left,
-    .flower-right {
-        width: 80px;
-        left: 5%;
-        right: 5%;
-    }
-}
-
-@media (max-width: 480px) {
-    .flower {
-        width: 70px;
-    }
-    .flower-left,
-    .flower-right {
-        width: 60px;
-        left: 2%;
-        right: 2%;
-    }
-}
-
-.h3-wrapper{
-    font-family: "Sacramento", cursive;
-    font-weight: 550;
-    font-style: normal;
-    font-size: 50px;
-}
-
-.p-skill1, .p-skill2{
-    width: auto;
-    height:auto;
-    background-color: #FCE7E7;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 4px;
-    padding-bottom: 20px;
-    border-radius: 20px;
-}
-
-
-/* 
-three dots */
-
-.loader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-    margin-bottom: 30px;
-}
-
-.dot{
-    width:20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(233, 183, 183);
-    animation: up-down 0.8s ease 3s 4 alternate;
-}
-
-@keyframes up-down {
-    from{
-        transform: translateY(-10px);
-    }
-    to{
-        transform: translateY(10px);
-    }
-    
-}
-
-.dot:nth-child(2){
-    animation-delay: 3.1s;
-    background-color: #FCE7E7;
-}
-.dot:nth-child(2){
-    animation-delay: 3.2s;
-    background-color: #d97b7b;
-}
-.dot:nth-child(3){
-    animation-delay: 3.3s;
-    background-color: #b95151;
-}
-.dot:nth-child(4){
-    animation-delay: 3.4s;
-    background-color: #5b1111;
-}
-
-.flower {
-    animation: float-gentle 3s ease-in-out infinite;
-}
-
+/* Flower Animations */
 @keyframes float-gentle {
     0%, 100% {
         transform: translateY(0px) rotate(0deg);
@@ -436,14 +277,6 @@ three dots */
     50% {
         transform: translateY(-15px) rotate(2deg);
     }
-}
-
-.flower-left {
-    animation: float-left 4s ease-in-out infinite;
-}
-
-.flower-right {
-    animation: float-right 3.5s ease-in-out infinite;
 }
 
 @keyframes float-left {
@@ -460,6 +293,211 @@ three dots */
         transform: translateX(0px) rotate(2deg);
     }
     50% {
-        transform:  translateX(5px) rotate(-2deg);
+        transform: translateX(5px) rotate(-2deg);
+    }
+}
+
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.mid-2-section > h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 40px;
+    column-gap: 40px;
+    padding: 50px;
+    align-items: start;
+}
+
+.img1, .img2 {
+    width: 250px;
+    height: 180px;
+    border-radius: 20px;
+    border: 6px dotted rgb(161, 42, 42);
+}
+
+.skill1 h3 {
+    margin-top: 0;
+}
+
+.skill2 h3 {
+    margin-top: 0;
+    inline-size: 1.8;
+}
+
+.skill1, .skill2 {
+    text-align: left;
+}
+
+.skill1 p, .skill2 p {
+    margin-top: 30px;
+}
+
+.p-skill1, .p-skill2 {
+    width: auto;
+    height: auto;
+    background-color: #FCE7E7;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+
+
+/* ============================================
+   LOADER / THREE DOTS ANIMATION
+   ============================================ */
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(233, 183, 183);
+    animation: up-down 0.8s ease 6s 4 alternate;
+}
+
+@keyframes up-down {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+.dot:nth-child(2) {
+    animation-delay: 6.1s;
+    background-color: #FCE7E7;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 6.2s;
+    background-color: #d97b7b;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 6.3s;
+    background-color: #b95151;
+}
+
+.dot:nth-child(5) {
+    animation-delay: 6.4s;
+    background-color: #5b1111;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: pink;
+}
+
+.footer-wrapper {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    height: 100px;
+    color: brown;
+}
+
+.footer > p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    font-family: "Sacramento", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    color: rgb(173, 84, 68);
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN / MEDIA QUERIES
+   ============================================ */
+
+/* Tablet and smaller desktop */
+@media (max-width: 1200px) {
+    .flower {
+        position: absolute;
+        width: 200px;
+        height: auto;
+        z-index: 0;
+    }
+    
+    .flower-left {
+        width: 150px;
+        height: auto;
+        left: -20%;
+        top: 15%;
+        transform: translateY(-50%);
+    }
+    
+    .flower-right {
+        width: 200px;
+        height: auto;
+        right: -20%;
+        top: -10%;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .flower {
+        width: 100px;
+    }
+    
+    .flower-left,
+    .flower-right {
+        width: 80px;
+        left: 5%;
+        right: 5%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .flower {
+        width: 70px;
+    }
+    
+    .flower-left,
+    .flower-right {
+        width: 60px;
+        left: 2%;
+        right: 2%;
     }
 }
