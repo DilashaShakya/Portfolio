@@ -1,36 +1,41 @@
-Portfolio 🌸
+# 🌸 Portfolio
 
-🔗 Live Site:
-👉 https://dilashashakya.github.io/Portfolio/
+🔗 **Live Site:**  
+https://dilashashakya.github.io/Portfolio/
 
-About This Project
+---
 
-This portfolio is part of my effort to revisit HTML and CSS fundamentals while following Angela Yu’s Web Development course.
+## About
 
-Although I’ve worked on larger projects before, I wanted to slow down and revisit the basics. Revisiting core concepts helps me better understand layout, styling, and small UI details that are easy to overlook when moving too quickly.
+This portfolio is part of my effort to revisit **HTML and CSS fundamentals** while following **Angela Yu’s Web Development course**.
 
-This project is mainly focused on:
+Although I’ve worked on larger projects before, I wanted to slow down and revisit the basics. Reinforcing core concepts helps improve layout, styling, and attention to small UI details.
 
-Practicing clean HTML structure
+---
 
-Relearning CSS layouts and animations
+## Focus Areas
 
-Experimenting with simple interactions and visual details
+- Clean HTML structure  
+- CSS layouts and animations  
+- Simple interactions and visual details  
+- Strengthening frontend fundamentals  
 
-Strengthening my overall frontend foundation
+---
 
-Tech Used
+## Tech Stack
 
-HTML5
+- HTML5  
+- CSS3  
+- JavaScript (minimal, for basic interactions)
 
-CSS3
+---
 
-A small amount of JavaScript for basic interactions
+## Why This Project
 
-Why This Project
+This project is less about perfection and more about learning, experimenting, and gradually improving foundational skills.
 
-Going back to the basics has been a helpful reminder that strong fundamentals matter. This portfolio is less about perfection and more about learning, experimenting, and improving step by step.
+---
 
-Status
+## Status
 
-🚧 In progress — I’ll continue updating and refining this as I learn more.
+🚧 **In Progress** — actively refining and updating.
