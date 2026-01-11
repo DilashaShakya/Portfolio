@@ -9,6 +9,8 @@
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
+    width:100%;
+    max-width: 100%;
 }
 
 a {
@@ -54,7 +56,8 @@ h3 {
     background-image: url('images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
     height: 500px;
     margin: 0;
     padding: 0;
@@ -63,6 +66,7 @@ h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 /* Typing animation for subtitle */
@@ -101,6 +105,8 @@ h3 {
 .img-play {
     width: 60px;
 }
+
+
 
 /* Tooltip and arrow on button click */
 .play-btn:active::after {
@@ -176,11 +182,14 @@ h3 {
     align-items: center;
     text-align: center;
     margin-bottom: 20px;
+    width:100%;
+    max-width: 100%;
 }
 
 .mid-container > div {
     width: fit-content;
     position: relative;
+    max-width: 100%;
 }
 
 /* Profile Picture */
@@ -244,6 +253,8 @@ h3 {
    FLOWER DECORATIONS
    ============================================ */
 
+
+
 .flower {
     position: absolute;
     width: 200px;
@@ -255,17 +266,17 @@ h3 {
 .flower-left {
     width: 150px;
     height: auto;
-    left: 10%;
-    top: 77%;
+    left: -20%;
+    top: 15%;
     transform: translateY(-50%);
     animation: float-left 4s ease-in-out infinite;
 }
 
 .flower-right {
-    width: 150px;
+    width: 200px;
     height: auto;
-    right: 10%;
-    top: 59%;
+    right: -20%;
+    top: -10%;
     animation: float-right 3.5s ease-in-out infinite;
 }
 
@@ -360,6 +371,7 @@ h3 {
     padding-top: 4px;
     padding-bottom: 20px;
     border-radius: 20px;
+    line-height: 2;
 }
 
 
@@ -380,7 +392,7 @@ h3 {
     height: 20px;
     border-radius: 50%;
     background-color: rgb(233, 183, 183);
-    animation: up-down 0.8s ease 6s 4 alternate;
+    animation: up-down 0.8s ease infinite alternate;
 }
 
 @keyframes up-down {
@@ -393,22 +405,22 @@ h3 {
 }
 
 .dot:nth-child(2) {
-    animation-delay: 6.1s;
+    animation-delay: 0.1s;
     background-color: #FCE7E7;
 }
 
 .dot:nth-child(3) {
-    animation-delay: 6.2s;
+    animation-delay: 0.2s;
     background-color: #d97b7b;
 }
 
 .dot:nth-child(4) {
-    animation-delay: 6.3s;
+    animation-delay: 0.3s;
     background-color: #b95151;
 }
 
 .dot:nth-child(5) {
-    animation-delay: 6.4s;
+    animation-delay: 0.4s;
     background-color: #5b1111;
 }
 
@@ -486,6 +498,55 @@ h3 {
         left: 5%;
         right: 5%;
     }
+
+    .intro{
+        max-width: 90%;
+        padding: 15%;
+    }
+    .intro-wrapper {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .grid-container{
+        grid-template-columns: 1fr;
+        padding:20px;
+    }
+    
+    .img1,img2{
+        width: 100%;
+        height:auto;
+        margin: 0 auto;
+    }
+
+    .play-btn:active::before {
+        content: attr(data-tip);
+        position: absolute;
+        left: -100px;
+        top: 360%;
+        transform: translateY(-50%);
+        background: rgba(70, 72, 61, 0.75);
+        color: white;
+        padding: 6px 10px;
+        border-radius: 10px;
+        border: 3px solid rgb(0, 0, 0);
+        font-size: 10px;
+        white-space: nowrap;
+        font-style: italic;
+    }
+
+    .play-btn:active::after {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        left: -110px;
+        top: 350%;
+        gap: 10px;
+        transform: translateY(-50%);
+        background: url("./images/arrow.png") no-repeat center / contain;
+        animation: arrow-move 3s ease 0s infinite alternate;
+    }
 }
 
 /* Small mobile devices */
@@ -499,5 +560,67 @@ h3 {
         width: 60px;
         left: 2%;
         right: 2%;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+    
+    h3 {
+        font-size: x-large;
+    }
+    
+    .cloud {
+        padding: 10px 25px;
+        font-size: large;
+    }
+    
+    .intro {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .img-wrapper {
+        width: 150px;
+    }
+
+    .grid-container {
+        padding: 25px;
+    }
+
+    .footer-wrapper{
+        flex-direction: column;
+        gap:20px;
+        padding: 20px;
+        height:auto;
+    }
+
+    .play-btn:active::before {
+        content: attr(data-tip);
+        position: absolute;
+        left: -100px;
+        top: 405%;
+        transform: translateY(-50%);
+        background: rgba(70, 72, 61, 0.75);
+        color: white;
+        padding: 6px 10px;
+        border-radius: 10px;
+        border: 3px solid rgb(0, 0, 0);
+        font-size: 12px;
+        white-space: nowrap;
+        font-style: italic;
+    }
+
+    .play-btn:active::after {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        left: -119px;
+        top: 450%;
+        gap: 10px;
+        transform: translateY(-50%);
+        background: url("./images/arrow.png") no-repeat center / contain;
+        animation: arrow-move 3s ease 0s infinite alternate;
     }
 }
